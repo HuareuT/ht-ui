@@ -1,9 +1,9 @@
 {
-  "name": "ht-ui",
-  "version": "0.1.0",
-  "description": "基于Vue3的UI组件库，包含可拖拽模态框、文件预览等组件",
-  "main": "dist/ht-ui.umd.js",
-  "module": "dist/ht-ui.es.js",
+  "name": "tt-components",
+  "version": "0.1.1",
+  "description": "基于Vue3的组件库，包含可拖拽模态框、文件预览等组件",
+  "main": "dist/tt-components.umd.js",
+  "module": "dist/tt-components.es.js",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist"
@@ -26,12 +26,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HuareuT/ht-ui"
+    "url": "https://github.com/HuareuT/tt-components"
   },
   "bugs": {
-    "url": "https://github.com/HuareuT/ht-ui/issues"
+    "url": "https://github.com/HuareuT/tt-components/issues"
   },
-  "homepage": "https://github.com/HuareuT/ht-ui#readme",
+  "homepage": "https://github.com/HuareuT/tt-components#readme",
   "peerDependencies": {
     "vue": "^3.2.0",
     "ant-design-vue": "^3.2.0",
