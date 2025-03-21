@@ -41,7 +41,7 @@
 
     <template #title>
       <div ref="modalTitleRef" style="width: 100%; cursor: move" @mousedown="startDrag">
-        {{ fileList && fileList.length > 0 && currentIndex >= 0 ? fileList[currentIndex].name || title : title }}
+        {{ fileList && fileList.length > 0 && currentIndex >= 0 ? fileList[currentIndex]?.name || title : title }}
       </div>
     </template>
 
@@ -264,7 +264,7 @@ watch(open, (newVal) => {
     }
     emit("update:currentIndex", currentIndex.value);
     if (props.fileList && props.fileList.length > 0) {
-      emit("fileChange", props.fileList[0], 0);
+      emit("fileChange", props.fileList[currentIndex.value], currentIndex.value);
     }
   }
 });
