@@ -262,9 +262,6 @@ watch(open, (newVal) => {
       transformX.value = 0;
       transformY.value = 0;
     }
-
-    // 重置当前文件索引
-    currentIndex.value = 0;
     emit("update:currentIndex", currentIndex.value);
     if (props.fileList && props.fileList.length > 0) {
       emit("fileChange", props.fileList[0], 0);
