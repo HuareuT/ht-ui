@@ -210,10 +210,23 @@ const stopResize = () => {
   document.removeEventListener("mouseup", stopResize);
 };
 
+// 处理键盘事件
+const handleKeyDown = (e) => {
+  // 确保模态框是打开的
+  if (!open.value) return;
+
+  if (e.key === "ArrowLeft") {
+    prevFile();
+  } else if (e.key === "ArrowRight") {
+    nextFile();
+  }
+};
+
 // 生命周期钩子
 onMounted(() => {
   window.addEventListener("resize", handleWindowResize);
   loadModalSettings();
+  window.addEventListener("keydown", handleKeyDown);
 });
 
 onUnmounted(() => {
@@ -222,6 +235,7 @@ onUnmounted(() => {
   document.removeEventListener("mouseup", stopDrag);
   document.removeEventListener("mousemove", handleResize);
   document.removeEventListener("mouseup", stopResize);
+  window.removeEventListener("keydown", handleKeyDown);
 });
 
 // 处理窗口大小变化

@@ -139,8 +139,6 @@ const resetFile = (index = 0) => {
 
 // 打开模态框
 const showModal = (index = 0) => {
-  console.log(props.fileList);
-
   if (props.fileList && props.fileList.length > 0) {
     currentIndex.value = index >= 0 && index < props.fileList.length ? index : 0;
     currentFile.value = props.fileList[currentIndex.value];
