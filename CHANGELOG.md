@@ -1,31 +1,12 @@
 # 更新日志
 
-本项目的所有重要变更都将记录在此文件中。
 
-本文档格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/)，
-本项目遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
+### 0.1.7 (2025-07-24)
 
-## [未发布]
 
-### 新增
+### ✨ 新增功能
 
-- 📦 添加 Prettier 代码格式化工具
-- 🔧 优化构建配置，修复 terser external 问题
-- 📖 重新组织 README 文档结构
-- 🚀 优化组件注册机制，支持按需加载
-- 📁 添加标准的项目配置文件 (.gitignore, .prettierrc)
-
-### 修改
-
-- ⬆️ 更新 peerDependencies 版本范围，提升兼容性
-- 🏗️ 重构 src/index.js 导出机制
-- 📝 完善组件 API 文档
-- 🔧 简化开发工具链，移除 ESLint
-
-### 修复
-
-- 🐛 修复构建警告：移除未使用的 nextTick 导入
-- 🐛 修复混合导出警告
+* 添加自动化发布流程 ([2e4031e](https://github.com/HuareuT/tt-components/commit/2e4031e0fc145292752f068e03894261b7c577c1))
 
 ## [0.1.6] - 2024-01-XX
 

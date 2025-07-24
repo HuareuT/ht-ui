@@ -1,6 +1,6 @@
 {
   "name": "tt-components",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "tt-components组件库,基于ant-design-vue封装的常用组件",
   "main": "dist/tt-components.umd.js",
   "module": "dist/tt-components.es.js",
@@ -23,11 +23,13 @@
     "release:minor": "pnpm version:minor && pnpm publish",
     "release:major": "pnpm version:major && pnpm publish",
     "release": "standard-version",
+    "release:dry": "standard-version --dry-run",
     "release:publish": "pnpm release && npm publish",
     "publish:check": "npm pack --dry-run",
     "publish:beta": "npm publish --tag beta",
     "publish:alpha": "npm publish --tag alpha",
-    "prerelease": "pnpm clean && pnpm build && pnpm publish:check"
+    "prerelease": "pnpm clean && pnpm build && pnpm publish:check",
+    "demo:release": "echo '🚀 这是一个发布演示命令，请使用 pnpm release:publish 进行实际发布'"
   },
   "keywords": [
     "vue",
