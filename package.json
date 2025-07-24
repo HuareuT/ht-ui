@@ -1,10 +1,9 @@
 {
   "name": "tt-components",
   "version": "0.1.6",
-  "description": "基于Vue3的组件库，包含可拖拽模态框、文件预览等组件",
+  "description": "tt-components组件库,基于ant-design-vue封装的常用组件",
   "main": "dist/tt-components.umd.js",
   "module": "dist/tt-components.es.js",
-  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -13,7 +12,22 @@
     "build": "vite build",
     "preview": "vite preview",
     "examples": "pnpm -C examples dev",
-    "build:all": "pnpm build && pnpm -C examples build"
+    "build:all": "pnpm build && pnpm -C examples build",
+    "format": "prettier --write src/**/*.{js,vue}",
+    "clean": "rimraf dist",
+    "prepublishOnly": "pnpm clean && pnpm build",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major",
+    "release:patch": "pnpm version:patch && pnpm publish",
+    "release:minor": "pnpm version:minor && pnpm publish",
+    "release:major": "pnpm version:major && pnpm publish",
+    "release": "standard-version",
+    "release:publish": "pnpm release && npm publish",
+    "publish:check": "npm pack --dry-run",
+    "publish:beta": "npm publish --tag beta",
+    "publish:alpha": "npm publish --tag alpha",
+    "prerelease": "pnpm clean && pnpm build && pnpm publish:check"
   },
   "keywords": [
     "vue",
@@ -35,15 +49,19 @@
   },
   "homepage": "https://github.com/HuareuT/tt-components#readme",
   "peerDependencies": {
-    "vue": "3.4.27",
-    "ant-design-vue": "4.2.5",
-    "@ant-design/icons-vue": "^6.1.0"
+    "@ant-design/icons-vue": ">=6.0.0",
+    "ant-design-vue": ">=4.0.0",
+    "vue": ">=3.0.0"
   },
   "devDependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "@vitejs/plugin-vue": "5.0.4",
-    "vite": "5.2.12",
-    "vue": "3.4.27",
     "ant-design-vue": "4.2.5",
-    "@ant-design/icons-vue": "^6.1.0"
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "standard-version": "^9.5.0",
+    "terser": "^5.43.1",
+    "vite": "5.2.12",
+    "vue": "3.4.27"
   }
 }
