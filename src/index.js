@@ -1,6 +1,7 @@
 import TtDraggableModal from './components/draggable-modal/index.vue';
 import TtPreviewFileModal from './components/preview-file-modal/index.vue';
 import TtTable from './components/table/index.vue';
+import TtUpload from './components/upload/index.vue';
 
 // 版本信息
 const version = '0.1.6';
@@ -10,10 +11,11 @@ const componentMap = {
   TtDraggableModal,
   TtPreviewFileModal,
   TtTable,
+  TtUpload,
 };
 
 // 单独导出所有组件
-export { TtDraggableModal, TtPreviewFileModal, TtTable, version };
+export { TtDraggableModal, TtPreviewFileModal, TtTable, TtUpload, version };
 
 // 定义安装函数
 const install = function (app) {
@@ -35,6 +37,7 @@ export default {
   TtDraggableModal,
   TtPreviewFileModal,
   TtTable,
+  TtUpload,
 };
 
 // 支持通过 script 标签使用
