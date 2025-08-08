@@ -1,6 +1,13 @@
 # 更新日志
 
 
+### [0.1.8](https://github.com/HuareuT/tt-components/compare/v0.1.7...v0.1.8) (2025-08-08)
+
+
+### 🐛 Bug 修复
+
+* 添加上传示例 ([ffa690f](https://github.com/HuareuT/tt-components/commit/ffa690f27ed506215e42c2fe2c263ca6691b1509))
+
 ### 0.1.7 (2025-07-24)
 
 
