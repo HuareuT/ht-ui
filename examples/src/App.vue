@@ -9,6 +9,8 @@
       <TableExample />
       <a-divider dashed>分割线</a-divider>
       <UploadExample />
+      <a-divider dashed>分割线</a-divider>
+      <FormExample />
     </div>
   </a-config-provider>
 </template>
@@ -19,6 +21,7 @@
   import PreviewFileModelExample from './components/preview-file-model-example.vue';
   import TableExample from './components/table-example.vue';
   import UploadExample from './components/upload-example.vue';
+  import FormExample from './components/form-example.vue';
 </script>
 
 <style>

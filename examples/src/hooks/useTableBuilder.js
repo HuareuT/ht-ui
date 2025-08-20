@@ -1,5 +1,6 @@
 import { h, ref, reactive } from 'vue';
-import TtTable from '../components/table/index.vue';
+// import { TtTable } from 'tt-components';
+import TtTable from '../components/local/table.vue';
 
 export const useTableBuilder = props => {
   const tableLoading = ref(false);
