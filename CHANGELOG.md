@@ -1,6 +1,13 @@
 # 更新日志
 
 
+### [0.1.12](https://github.com/HuareuT/tt-components/compare/v0.1.11...v0.1.12) (2025-09-02)
+
+
+### ✨ 新增功能
+
+* 导出表格增加一些方法 ([f474bbe](https://github.com/HuareuT/tt-components/commit/f474bbe0b3ee2eeee181f065ea6335b430026ebd))
+
 ### [0.1.11](https://github.com/HuareuT/tt-components/compare/v0.1.10...v0.1.11) (2025-08-20)
 
 ### [0.1.10](https://github.com/HuareuT/tt-components/compare/v0.1.9...v0.1.10) (2025-08-20)
