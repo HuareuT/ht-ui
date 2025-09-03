@@ -38,8 +38,8 @@
 </template>
 <script setup>
   import { onMounted, ref } from 'vue';
-  import { useTableBuilder } from '../hooks/useTableBuilder';
-  // import { useTableBuilder } from 'tt-components';
+  // import { useTableBuilder } from '../hooks/useTableBuilder';
+  import { useTableBuilder } from 'tt-components';
 
   const columns = ref([
     {
@@ -99,6 +99,7 @@
   const { TableBuilder, tablePagination, tableLoading, tableReload, tableLoad } = useTableBuilder({
     columns: columns.value,
     dataSource: dataList,
+    hideAction: true,
     loadRequest: getDataList,
   });
 

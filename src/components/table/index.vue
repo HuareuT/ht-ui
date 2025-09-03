@@ -1,6 +1,6 @@
 <template>
   <a-flex vertical gap="10">
-    <a-flex align="center">
+    <a-flex align="center" v-if="!hideAction">
       <slot name="operate"></slot>
       <slot name="setting">
         <a-flex flex="1" justify="end">
@@ -59,6 +59,10 @@
     loadRequest: {
       type: Function,
       default: () => {},
+    },
+    hideAction: {
+      type: Boolean,
+      default: false,
     },
   });
 

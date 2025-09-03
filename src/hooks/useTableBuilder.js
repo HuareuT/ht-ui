@@ -15,12 +15,14 @@ export const useTableBuilder = props => {
     return h(
       TtTable,
       {
+        ref: tableRef,
         pagination: tablePagination.value,
         loading: tableLoading.value,
         scroll: {
           x: 'max-content',
         },
-        ref: tableRef,
+        bordered: true,
+        size: 'small',
         onChange: paginationChange,
         onRefresh: tableLoad,
         ...reactive(props),
