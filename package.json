@@ -1,6 +1,6 @@
 {
   "name": "tt-components",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "tt-components组件库,基于ant-design-vue封装的常用组件",
   "main": "dist/tt-components.umd.js",
   "module": "dist/tt-components.es.js",
