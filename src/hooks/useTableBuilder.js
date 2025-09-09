@@ -3,6 +3,7 @@ import TtTable from '../components/table/index.vue';
 
 export const useTableBuilder = props => {
   const tableLoading = ref(false);
+  const { pagination = {}, ...rest } = props;
   const tablePagination = ref({
     current: 1,
     pageSize: 10,
@@ -10,13 +11,19 @@ export const useTableBuilder = props => {
     showSizeChanger: true,
     showTotal: (total, range) => `共${total}条记录，第${range[0]}-${range[1]}条`,
   });
+  if (pagination !== false) {
+    tablePagination.value = {
+      ...tablePagination.value,
+      ...pagination,
+    };
+  }
   const tableRef = ref(null);
   const Component = (_, { slots }) => {
     return h(
       TtTable,
       {
         ref: tableRef,
-        pagination: tablePagination.value,
+        pagination: pagination !== false ? tablePagination.value : false,
         loading: tableLoading.value,
         scroll: {
           x: 'max-content',
@@ -25,14 +32,16 @@ export const useTableBuilder = props => {
         size: 'small',
         onChange: paginationChange,
         onRefresh: tableLoad,
-        ...reactive(props),
+        ...reactive(rest),
       },
       slots
     );
   };
 
   const tableReload = () => {
-    tablePagination.value.current = 1;
+    if (tablePagination.value !== false) {
+      tablePagination.value.current = 1;
+    }
     props?.loadRequest?.();
   };
 
@@ -40,8 +49,12 @@ export const useTableBuilder = props => {
     props?.loadRequest?.();
   };
 
-  const paginationChange = page => {
+  const filteredInfo = ref();
+  const sortedInfo = ref();
+  const paginationChange = (page, filters, sorter) => {
     tablePagination.value = page;
+    filteredInfo.value = filters;
+    sortedInfo.value = sorter;
     tableLoad();
   };
 
@@ -49,6 +62,8 @@ export const useTableBuilder = props => {
     TableBuilder: Component,
     tablePagination,
     tableLoading,
+    filteredInfo,
+    sortedInfo,
     tableReload,
     tableLoad,
     paginationChange,

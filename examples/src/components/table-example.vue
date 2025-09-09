@@ -93,15 +93,16 @@
     });
     tableLoading.value = false;
     dataList.value = data.records;
-    tablePagination.value.total = data.total;
+    // tablePagination.value.total = data.total;
   };
 
   const { TableBuilder, tablePagination, tableLoading, tableReload, tableLoad } = useTableBuilder({
     columns: columns.value,
+    pagination: false,
     dataSource: dataList,
     hideAction: true,
     loadRequest: getDataList,
   });
 
-  onMounted(tableLoad);
+  onMounted(tableReload);
 </script>

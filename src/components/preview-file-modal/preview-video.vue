@@ -1,13 +1,25 @@
 <template>
   <div class="preview-video-container">
     <div class="video-wrapper">
-      <video ref="videoRef" :src="src" class="preview-video" controls controlsList="nodownload" @click="togglePlay"></video>
+      <video
+        ref="videoRef"
+        class="preview-video"
+        controls
+        controlsList="nodownload"
+        @click="togglePlay"
+      >
+        <source :src="src" type="video/mp4" />
+        <source :src="src" type="video/ogg" />
+        <source :src="src" type="video/webm" />
+      </video>
+      <!-- <div id="preview-video-player" class="preview-video"></div> -->
     </div>
   </div>
 </template>
 
 <script setup>
   import { ref, onMounted, onUnmounted } from 'vue';
+  // import DPlayer from 'dplayer';
 
   const props = defineProps({
     src: {
@@ -29,10 +41,23 @@
     }
   };
 
+  const dpPlayer = ref(null);
+  onMounted(() => {
+    // dpPlayer.value = new DPlayer({
+    //   container: document.getElementById('preview-video-player'),
+    //   video: {
+    //     url: props.src,
+    //   },
+    // });
+  });
   // 当组件卸载时暂停视频
   onUnmounted(() => {
     if (videoRef.value && !videoRef.value.paused) {
       videoRef.value.pause();
+    }
+
+    if (dpPlayer.value) {
+      dpPlayer.value?.destroy?.();
     }
   });
 </script>

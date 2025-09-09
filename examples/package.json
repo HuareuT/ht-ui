@@ -8,10 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "3.4.27",
-    "ant-design-vue": "4.2.5",
     "@ant-design/icons-vue": "^6.1.0",
-    "tt-components": "workspace:^"
+    "@cloudgeek/vue3-video-player": "^0.3.10",
+    "ant-design-vue": "4.2.5",
+    "dplayer": "^1.27.1",
+    "tt-components": "workspace:^",
+    "vue": "3.4.27"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "5.0.4",
